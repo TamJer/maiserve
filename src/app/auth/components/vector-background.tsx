@@ -6,6 +6,7 @@ interface Props {
 }
 
 const VectorBackground: FC<Props> = ({ className }) => {
+  // todo: change color
   return (
     <div className={cn(className, 'relative h-[1501.59px] w-[1217.42px]')}>
       <div className="absolute left-[708.58px] top-[830.79px] h-[206px] w-[733.17px] origin-top-left rotate-[46.05deg] bg-orange-500" />
