@@ -14,7 +14,7 @@ const loginAction = async (formData: z.infer<typeof LoginSchema>) => {
   })
 
   if (error) {
-    redirect('/auth/login?message=Could not authenticate user')
+    redirect('/login?message=Could not authenticate user')
   }
 
   redirect('/')
