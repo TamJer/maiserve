@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useTransition } from 'react'
 import AuthCard from '@/app/auth/components/auth-card'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { z } from 'zod'
@@ -16,8 +16,10 @@ import {
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
+import loginAction from '@/app/auth/login/login-action'
 
 const LoginForm = () => {
+  const [isPending, startTransition] = useTransition()
   const form = useForm<z.infer<typeof LoginSchema>>({
     resolver: zodResolver(LoginSchema),
     defaultValues: {
@@ -26,16 +28,14 @@ const LoginForm = () => {
     },
   })
 
-  const onLogin: SubmitHandler<z.infer<typeof LoginSchema>> = ({
-    email,
-    password,
-  }) => {
-    console.log(email, password)
+  const onSubmit: SubmitHandler<z.infer<typeof LoginSchema>> = (data) => {
+    startTransition(() => loginAction(data))
   }
+
   return (
     <Form {...form}>
       <form
-        onSubmit={form.handleSubmit(onLogin)}
+        onSubmit={form.handleSubmit(onSubmit)}
         className={'flex max-h-screen flex-col items-center justify-center'}
       >
         <AuthCard title={'Login'} subtitle={'Welcome back!'}>
@@ -51,6 +51,7 @@ const LoginForm = () => {
                       placeholder={'Email'}
                       type={'text'}
                       aria-label={'email'}
+                      disabled={isPending}
                     />
                   </FormControl>
                   <FormMessage />
@@ -68,6 +69,7 @@ const LoginForm = () => {
                       placeholder={'Password'}
                       type={'password'}
                       aria-label={'password'}
+                      disabled={isPending}
                     />
                   </FormControl>
                   <div className={'relative'}>
@@ -83,7 +85,11 @@ const LoginForm = () => {
               )}
             />
           </div>
-          <Button type={'submit'} className={'mt-12 w-full'}>
+          <Button
+            type={'submit'}
+            className={'mt-12 w-full'}
+            isLoading={isPending}
+          >
             Login
           </Button>
         </AuthCard>
