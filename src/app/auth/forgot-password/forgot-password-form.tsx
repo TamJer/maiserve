@@ -1,5 +1,5 @@
 'use client'
-import React, { useTransition } from 'react'
+import React, { FC, useTransition } from 'react'
 import {
   Form,
   FormControl,
@@ -18,7 +18,11 @@ import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import forgotPasswordAction from '@/app/auth/forgot-password/forgot-password-action'
 
-const ForgotPasswordForm = () => {
+interface Props {
+  message?: string
+}
+
+const ForgotPasswordForm: FC<Props> = ({ message }) => {
   const [isPending, startTransition] = useTransition()
   const form = useForm<z.infer<typeof ResetPasswordSchema>>({
     resolver: zodResolver(ResetPasswordSchema),
@@ -40,6 +44,9 @@ const ForgotPasswordForm = () => {
         className={'flex max-h-screen flex-col items-center justify-center'}
       >
         <AuthCard title={'Forgot Password'} subtitle={'Reset your password.'}>
+          {message && (
+            <p className={'mb-4 text-sm text-destructive'}>{message}</p>
+          )}
           <FormField
             name={'email'}
             render={({ field }) => (

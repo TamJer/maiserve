@@ -15,10 +15,10 @@ const forgotPasswordAction = async (
   })
 
   if (error) {
-    redirect('/forgot-password?message=Could not reset password')
+    redirect('/auth/forgot-password?message=Could not reset password')
   }
 
-  redirect('/forgot-password?message=Password reset email sent')
+  redirect('/auth/forgot-password?message=Password reset email sent')
 }
 
 export default forgotPasswordAction
