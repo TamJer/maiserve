@@ -28,9 +28,11 @@ const LoginForm = () => {
 
   return (
     <Form {...form}>
-      <form>
+      <form
+        className={'flex max-h-screen flex-col items-center justify-center'}
+      >
         <AuthCard title={'Login'} subtitle={'Welcome back!'}>
-          <div className={'mb-[75px] space-y-9'}>
+          <div className={'space-y-9'}>
             <FormField
               name={'email'}
               render={({ field }) => (
@@ -68,7 +70,7 @@ const LoginForm = () => {
               )}
             />
           </div>
-          <Button type={'submit'} className={'w-full'}>
+          <Button type={'submit'} className={'mt-12 w-full'}>
             Login
           </Button>
         </AuthCard>
