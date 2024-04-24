@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import AuthCard from '@/app/auth/components/auth-card'
-import { useForm } from 'react-hook-form'
+import { SubmitHandler, useForm } from 'react-hook-form'
 import { z } from 'zod'
 import LoginSchema from '@/app/auth/login/login-schema'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -26,9 +26,16 @@ const LoginForm = () => {
     },
   })
 
+  const onLogin: SubmitHandler<z.infer<typeof LoginSchema>> = ({
+    email,
+    password,
+  }) => {
+    console.log(email, password)
+  }
   return (
     <Form {...form}>
       <form
+        onSubmit={form.handleSubmit(onLogin)}
         className={'flex max-h-screen flex-col items-center justify-center'}
       >
         <AuthCard title={'Login'} subtitle={'Welcome back!'}>
@@ -39,7 +46,12 @@ const LoginForm = () => {
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input {...field} placeholder={'Email'} />
+                    <Input
+                      {...field}
+                      placeholder={'Email'}
+                      type={'text'}
+                      aria-label={'email'}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -55,6 +67,7 @@ const LoginForm = () => {
                       {...field}
                       placeholder={'Password'}
                       type={'password'}
+                      aria-label={'password'}
                     />
                   </FormControl>
                   <div className={'relative'}>
