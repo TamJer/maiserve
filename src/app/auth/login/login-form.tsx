@@ -28,7 +28,9 @@ const LoginForm = () => {
 
   return (
     <Form {...form}>
-      <form>
+      <form
+        className={'flex max-h-screen flex-col items-center justify-center'}
+      >
         <AuthCard title={'Login'} subtitle={'Welcome back!'}>
           <div className={'mb-[75px] space-y-9'}>
             <FormField
