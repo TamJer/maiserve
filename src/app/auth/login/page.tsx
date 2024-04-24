@@ -2,7 +2,7 @@ import React from 'react'
 import LoginForm from '@/app/auth/login/login-form'
 import VectorBackground from '@/app/auth/components/vector-background'
 
-const LoginPage = () => {
+const LoginPage = ({ searchParams }: { searchParams: { message: string } }) => {
   return (
     <div className={'flex flex-row justify-between'}>
       <VectorBackground
@@ -13,7 +13,7 @@ const LoginPage = () => {
           'flex h-screen w-full flex-col items-center justify-center 2xl:w-1/3 2xl:pr-14 '
         }
       >
-        <LoginForm />
+        <LoginForm message={searchParams.message} />
       </div>
     </div>
   )
