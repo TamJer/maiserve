@@ -3,6 +3,9 @@ import ForgotPasswordPage from '@/app/auth/forgot-password/page'
 
 const meta: Meta = {
   title: 'Pages/Auth',
+  parameters: {
+    layout: 'fullscreen',
+  },
 }
 
 export default meta
