@@ -10,7 +10,7 @@ const LoginPage = () => {
       />
       <div
         className={
-          'flex min-h-screen w-full flex-col items-center justify-center 2xl:w-1/3 2xl:pr-14 '
+          'flex h-screen w-full flex-col items-center justify-center 2xl:w-1/3 2xl:pr-14 '
         }
       >
         <LoginForm />
