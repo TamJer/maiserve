@@ -12,7 +12,7 @@ const AuthCard: FC<Props> = ({ title, subtitle, children }) => {
   return (
     <div
       className={
-        'w-screen max-w-[322px] border-border py-14 2xl:min-w-[504px] 2xl:space-y-[75px] 2xl:rounded 2xl:border 2xl:bg-card 2xl:px-12'
+        'w-screen max-w-[322px] border-border py-14 2xl:min-w-[504px] 2xl:space-y-0 2xl:rounded 2xl:border 2xl:bg-card 2xl:px-12'
       }
     >
       <Image
@@ -20,9 +20,9 @@ const AuthCard: FC<Props> = ({ title, subtitle, children }) => {
         alt={'MaiServe'}
         width={90}
         height={90}
-        className={'mx-auto'}
+        className={'mx-auto 2xl:hidden'}
       />
-      <div className={'mt-28 space-y-9'}>
+      <div className={'mt-28 space-y-10'}>
         <div className={'space-y-0.5'}>
           <h1 className={'text-3xl font-semibold 2xl:text-5xl'}>{title}</h1>
           <h3
