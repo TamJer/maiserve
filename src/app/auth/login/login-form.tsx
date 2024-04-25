@@ -1,5 +1,5 @@
 'use client'
-import React, { useTransition } from 'react'
+import React, { FC, useTransition } from 'react'
 import AuthCard from '@/app/auth/components/auth-card'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { z } from 'zod'
@@ -18,7 +18,11 @@ import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import loginAction from '@/app/auth/login/login-action'
 
-const LoginForm = () => {
+interface Props {
+  message?: string
+}
+
+const LoginForm: FC<Props> = ({ message }) => {
   const [isPending, startTransition] = useTransition()
   const form = useForm<z.infer<typeof LoginSchema>>({
     resolver: zodResolver(LoginSchema),
@@ -39,6 +43,7 @@ const LoginForm = () => {
         className={'flex max-h-screen flex-col items-center justify-center'}
       >
         <AuthCard title={'Login'} subtitle={'Welcome back!'}>
+          <p className={'mb-4 text-sm text-destructive'}>{message}</p>
           <div className={'space-y-9'}>
             <FormField
               name={'email'}
