@@ -3,6 +3,7 @@ import LoginForm from '@/app/auth/login/login-form'
 import AuthSuccessCard from '@/app/auth/components/auth-success-card'
 import { MailCheck } from 'lucide-react'
 import ResetForm from '@/app/auth/reset-password/reset-password'
+import ChangePasswordForm from '@/app/auth/change-password/change-password'
 
 const meta: Meta = {
   title: 'Organisms/AuthCard',
@@ -20,6 +21,10 @@ export const Login: Story = {
 
 export const ResetPassword: Story = {
   render: () => <ResetForm />,
+}
+
+export const ChangePassword: Story = {
+  render: () => <ChangePasswordForm />,
 }
 
 export const AuthSuccess: Story = {
