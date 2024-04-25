@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 import LoginForm from '@/app/auth/login/login-form'
 import ForgotPasswordForm from '@/app/auth/forgot-password/forgot-password-form'
+import ChangePasswordForm from '@/app/auth/change-password/change-password-form'
 
 const meta: Meta = {
   title: 'Organisms/AuthCard',
@@ -18,4 +19,8 @@ export const Login: Story = {
 
 export const ForgotPassword: Story = {
   render: () => <ForgotPasswordForm />,
+}
+
+export const ChangePassword: Story = {
+  render: () => <ChangePasswordForm />,
 }
