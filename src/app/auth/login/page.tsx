@@ -1,3 +1,4 @@
+'use server'
 import React from 'react'
 import LoginForm from '@/app/auth/login/login-form'
 import VectorBackground from '@/app/auth/components/vector-background'
