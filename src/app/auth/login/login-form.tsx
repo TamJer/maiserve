@@ -43,7 +43,9 @@ const LoginForm: FC<Props> = ({ message }) => {
         className={'flex max-h-screen flex-col items-center justify-center'}
       >
         <AuthCard title={'Login'} subtitle={'Welcome back!'}>
-          <p className={'mb-4 text-sm text-destructive'}>{message}</p>
+          {message && (
+            <p className={'mb-4 text-sm text-destructive'}>{message}</p>
+          )}
           <div className={'space-y-9'}>
             <FormField
               name={'email'}

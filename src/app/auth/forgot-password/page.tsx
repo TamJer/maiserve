@@ -2,7 +2,11 @@ import React from 'react'
 import VectorBackground from '@/app/auth/components/vector-background'
 import ForgotPasswordForm from '@/app/auth/forgot-password/forgot-password-form'
 
-const ForgotPasswordPage = () => {
+const ForgotPasswordPage = ({
+  searchParams,
+}: {
+  searchParams: { message: string }
+}) => {
   return (
     <div className={'flex flex-row justify-between'}>
       <VectorBackground
@@ -13,7 +17,7 @@ const ForgotPasswordPage = () => {
           'flex h-screen w-full flex-col items-center justify-center 2xl:w-1/3 2xl:pr-14'
         }
       >
-        <ForgotPasswordForm />
+        <ForgotPasswordForm message={searchParams.message} />
       </div>
     </div>
   )
