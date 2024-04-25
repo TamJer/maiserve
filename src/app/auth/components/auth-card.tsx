@@ -26,9 +26,7 @@ const AuthCard: FC<Props> = ({ title, subtitle, children }) => {
         <div className={'space-y-0.5'}>
           <h1 className={'text-3xl font-semibold 2xl:text-5xl'}>{title}</h1>
           <h3
-            className={
-              'Welcome back! 2x:text-4xl text-base font-medium 2xl:font-semibold'
-            }
+            className={'text-base font-medium 2xl:text-3xl 2xl:font-semibold'}
           >
             {subtitle}
           </h3>
