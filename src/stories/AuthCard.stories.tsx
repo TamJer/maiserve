@@ -22,7 +22,9 @@ export const AuthSuccess: Story = {
     title: 'Email successfully sent!',
     subtitle:
       'Please check your email for instructions to reset your password.',
-    icon: <MailCheck size={150} strokeWidth={1} />,
+    icon: (
+      <MailCheck className={'h-36 w-36 2xl:h-72 2xl:w-72'} strokeWidth={1} />
+    ),
     buttonTitle: 'Resend email',
     onButtonClick: () => {},
   },
