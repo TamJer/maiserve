@@ -28,7 +28,7 @@ export default function RootLayout({
       style={{ colorScheme: 'dark' }}
     >
       <body className="bg-background text-foreground">
-        <NextTopLoader showSpinner={false} height={2} color="#2acf80" />
+        <NextTopLoader showSpinner={false} height={2} color="#f9792f" />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
