@@ -105,6 +105,9 @@ importers:
       '@storybook/addon-themes':
         specifier: ^8.0.9
         version: 8.0.9
+      '@storybook/addon-viewport':
+        specifier: ^8.0.9
+        version: 8.0.9
       '@storybook/blocks':
         specifier: ^8.0.9
         version: 8.0.9(@types/react@18.2.8)(encoding@0.1.13)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)

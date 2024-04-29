@@ -19,7 +19,11 @@ const AuthSuccessCard: FC<Props> = ({
   onButtonClick,
 }) => {
   return (
-    <div className={'w-full max-w-[322px] text-center'}>
+    <div
+      className={
+        'w-full max-w-[322px] text-center 2xl:bg-card 2xl:text-card-foreground'
+      }
+    >
       <Image
         src={Logo}
         alt={'MaiServe'}
@@ -34,7 +38,9 @@ const AuthSuccessCard: FC<Props> = ({
       >
         {icon}
       </span>
-      <h1 className={'mt-[29px] text-2xl font-semibold'}>{title}</h1>
+      <h1 className={'mt-[29px] text-2xl font-semibold 2xl:text-5xl'}>
+        {title}
+      </h1>
       <h3 className={'mt-0.5 text-base font-medium'}>{subtitle}</h3>
       <Button className={'mt-10 w-full'} onClick={onButtonClick}>
         {buttonTitle}
