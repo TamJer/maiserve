@@ -2,6 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import LoginForm from '@/app/auth/login/login-form'
 import AuthSuccessCard from '@/app/auth/components/auth-success-card'
 import { MailCheck } from 'lucide-react'
+import ResetForm from '@/app/auth/reset-password/reset-password'
 
 const meta: Meta = {
   title: 'Organisms/AuthCard',
@@ -15,6 +16,10 @@ type Story = StoryObj<typeof meta>
 
 export const Login: Story = {
   render: () => <LoginForm />,
+}
+
+export const ResetPassword: Story = {
+  render: () => <ResetForm />,
 }
 
 export const AuthSuccess: Story = {
